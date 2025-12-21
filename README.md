@@ -49,19 +49,19 @@
 
 ### HTML
 ```html
-<a href="https://ваш_сайт/s/Ab3kP9">YouTube</a>
+<a href="https:/http://192.168.1.104:5000/s/Ab3kP9">YouTube</a>
 ````
 
 ### Markdown
 
 ```md
-[YouTube](https://ваш_сайт/s/Ab3kP9)
+[YouTube](https:/http://192.168.1.104:5000/s/Ab3kP9)
 ```
 
 ### Текст
 
 ```
-YouTube — https://ваш_сайт/s/Ab3kP9
+YouTube — https:/http://192.168.1.104:5000//s/Ab3kP9
 ```
 
 При переходе по короткой ссылке пользователь автоматически перенаправляется на оригинальный сайт.
@@ -89,7 +89,7 @@ project/
 ### 1️⃣ Клонировать репозиторий
 
 ```bash
-git clone https://github.com/your-username/link-generator.git
+git clone https://github.com/dards9/-.git
 cd link-generator
 ```
 
@@ -108,7 +108,7 @@ python app.py
 ### 4️⃣ Открыть в браузере
 
 ```
-http://127.0.0.1:5000
+
 ```
 
 ---
