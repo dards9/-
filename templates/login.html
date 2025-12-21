@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Вход</h2>
+    <form method="post">
+        <input name="username" placeholder="Логин" required>
+        <input name="password" type="password" placeholder="Пароль" required>
+        <button>Войти</button>
+    </form>
+    <a href="/register">Регистрация</a>
+</div>
+
+</body>
+</html>

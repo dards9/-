@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Link Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Генератор ссылок</h2>
+
+    <form method="post" class="card">
+        <input name="title" placeholder="Название ссылки" required>
+        <input name="url" placeholder="https://example.com" required>
+        <textarea name="comment" placeholder="Комментарий"></textarea>
+        <button class="btn primary">➕ Добавить</button>
+    </form>
+
+    {% for link in links %}
+    {% set short_url = request.host_url ~ 's/' ~ link[3] %}
+    <div class="card link-card">
+
+        <h3 class="link-title">
+            <img class="favicon"
+                 src="https://www.google.com/s2/favicons?domain={{ link[2] }}">
+            <a href="{{ short_url }}" target="_blank">{{ link[1] }}</a>
+        </h3>
+
+        <p class="comment">{{ link[4] }}</p>
+
+        <div class="short-url">
+            🔗 Короткая ссылка:
+            <a href="{{ short_url }}" target="_blank">{{ short_url }}</a>
+        </div>
+
+        <select onchange="updateCode(this, '{{ short_url }}', '{{ link[1] }}')">
+            <option value="html">🔗 HTML</option>
+            <option value="md">📄 Markdown</option>
+            <option value="text">📝 Текст</option>
+        </select>
+
+        <textarea class="code" readonly>
+<a href="{{ short_url }}">{{ link[1] }}</a>
+        </textarea>
+
+        <div class="actions">
+            <button class="btn copy" onclick="copyCode(this)">📋 Копировать</button>
+            <a class="btn delete" href="/delete/{{ link[0] }}">🗑 Удалить</a>
+        </div>
+
+    </div>
+    {% endfor %}
+
+    <a class="logout" href="/logout">🚪 Выйти</a>
+</div>
+
+<script>
+function updateCode(select, url, title) {
+    const textarea = select.nextElementSibling;
+
+    if (select.value === 'html') {
+        textarea.value = `<a href="${url}">${title}</a>`;
+    }
+    else if (select.value === 'md') {
+        textarea.value = `[${title}](${url})`;
+    }
+    else {
+        textarea.value = `${title} — ${url}`;
+    }
+}
+
+function copyCode(btn) {
+    const textarea = btn.parentElement.previousElementSibling;
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+
+    btn.innerText = "✅ Скопировано";
+    setTimeout(() => btn.innerText = "📋 Копировать", 1500);
+}
+</script>
+
+</body>
+</html>

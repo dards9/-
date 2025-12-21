@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    padding: 40px 0;
+}
+
+.container {
+    width: 480px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+
+input, textarea, select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+textarea.code {
+    font-family: monospace;
+    min-height: 60px;
+}
+
+.link-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 6px 0;
+}
+
+.link-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.link-title a:hover {
+    text-decoration: underline;
+}
+
+.favicon {
+    width: 16px;
+    height: 16px;
+}
+
+.comment {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn.primary {
+    background: #667eea;
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: #5566d4;
+}
+
+.btn.copy {
+    background: #f1f3f8;
+}
+
+.btn.copy:hover {
+    background: #e1e4f0;
+}
+
+.btn.delete {
+    background: #ffecec;
+    color: #c0392b;
+    text-decoration: none;
+}
+
+.btn.delete:hover {
+    background: #ffd6d6;
+}
+
+.logout {
+    display: block;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.logout:hover {
+    text-decoration: underline;
+}
